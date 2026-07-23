@@ -185,15 +185,7 @@
       line-height: 1;
     }
 
-    /* Counter */
-    .counter {
-      margin-top: 25px;
-      padding-top: 20px;
-      border-top: 1px dashed rgba(216, 27, 96, 0.3);
-      font-size: 1.05rem;
-      color: #c2185b;
-      font-style: italic;
-    }
+
 
     /* Floating Hearts */
     .floating-hearts {
@@ -308,30 +300,13 @@
     
     <p class="message-text fade-in delay-3" style="margin-top: 30px; font-family: 'Dancing Script', cursive; font-size: 1.8rem; text-align: right; color: #d81b60;">Forever yours,<br>Ayomiposi BALOGUN</p>
 
-    <!-- Days Together Counter -->
-    <div class="counter fade-in delay-3">
-      Loving you for <span id="daysCount" style="font-weight: 600;">...</span> beautiful days, and forever to go.
-    </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   
   <script>
-    // ==========================================================
-    // TO CHANGE THE ANNIVERSARY DATE, EDIT THE DATE BELOW
-    // Use the format: YYYY-MM-DD
-    // ==========================================================
-    const anniversaryDateString = '2023-01-01'; 
-    // ==========================================================
 
-    function calculateDays() {
-      const anniversaryDate = new Date(anniversaryDateString);
-      const today = new Date();
-      const timeDiff = Math.abs(today.getTime() - anniversaryDate.getTime());
-      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-      document.getElementById('daysCount').innerText = daysDiff;
-    }
-    calculateDays();
 
     // Floating Hearts
     function createHeart() {
