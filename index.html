@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>August 1st ❤️</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Ionicons Integration -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    /* CSS Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffe6ea 0%, #ffc1cc 100%);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(255, 105, 135, 0.2);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Envelope styling */
+    #envelopeContainer {
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+    #envelopeContainer:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 45px rgba(255, 105, 135, 0.3);
+    }
+    .envelope-icon {
+      font-size: 6rem;
+      margin-bottom: 10px;
+      animation: gentleBounce 2s infinite ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.8rem;
+      color: #d81b60;
+      margin-bottom: 20px;
+      line-height: 1.3;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 35px;
+      color: #c2185b;
+      line-height: 1.4;
+    }
+
+    .message-text {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      text-align: left;
+      color: #4a154b;
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    #yesBtn {
+      background-color: #ff4081;
+      color: white;
+      z-index: 20;
+    }
+    #yesBtn:hover {
+      background-color: #f50057;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(245, 0, 87, 0.4);
+    }
+
+    #noBtn {
+      background-color: #fff;
+      color: #ff4081;
+      border: 2px solid #ff4081;
+      z-index: 100; 
+      transition: left 0.3s ease, top 0.3s ease; 
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+    }
+    .delay-1 { animation-delay: 0.8s; }
+    .delay-2 { animation-delay: 1.6s; }
+    .delay-3 { animation-delay: 2.4s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .heart-pop {
+      animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Polaroid Image */
+    .polaroid {
+      background: white;
+      padding: 10px 10px 20px 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transform: rotate(-3deg);
+      max-width: 200px;
+      margin: 0 auto 25px auto;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+    .polaroid:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+    .polaroid img {
+      width: 100%;
+      height: auto;
+      border-radius: 2px;
+      display: block;
+      background-color: #ffe6ea; 
+      min-height: 150px;
+      object-fit: cover;
+    }
+    .polaroid-caption {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.3rem;
+      color: #d81b60;
+      margin-top: 10px;
+      text-align: center;
+      line-height: 1;
+    }
+
+    /* Counter */
+    .counter {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px dashed rgba(216, 27, 96, 0.3);
+      font-size: 1.05rem;
+      color: #c2185b;
+      font-style: italic;
+    }
+
+    /* Floating Hearts */
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 24px;
+      animation: floatUp linear infinite;
+      opacity: 0.6;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; }
+      10% { opacity: 0.7; }
+      90% { opacity: 0.5; }
+      100% { transform: translateY(-110vh) rotate(360deg) scale(1.2); opacity: 0; }
+    }
+
+    /* Audio Controls */
+    .audio-controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    #musicToggle {
+      background: rgba(255, 255, 255, 0.8);
+      color: #d81b60;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #musicToggle span {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+    #musicToggle:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.25rem; }
+      .buttons { flex-direction: column; align-items: center; }
+      button { width: 100%; max-width: 250px; }
+      .container { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="floating-hearts" id="floatingHearts"></div>
+
+  <div class="audio-controls">
+    <button id="musicToggle"><span><ion-icon name="musical-notes"></ion-icon></span> Play Song</button>
+    <audio id="bgMusic" loop>
+      <!-- Try loading custom song from assets first, fallback to Pixabay -->
+      <source src="assets/Savy_Henry_-_The_Best_Part_Vistanaij.com_.ng_.mp3" type="audio/mpeg">
+      <!-- <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_5119cb2d2e.mp3" type="audio/mpeg"> -->
+    </audio>
+  </div>
+
+  <!-- Envelope Container -->
+  <div class="container" id="envelopeContainer">
+    <div class="envelope-icon" style="color: #d81b60;"><ion-icon name="mail-unread-outline"></ion-icon></div>
+    <h1>For Arewa, Oreoluwa</h1>
+    <p class="message-text" style="text-align: center; color: #c2185b;">(Tap to open)</p>
+  </div>
+
+  <!-- Main Question Container -->
+  <div class="container hidden" id="mainContainer">
+    <h1 class="fade-in">Hi, Oreoluwa AMUDA. Ayanfe mi ❤️<br>August 1st (National Girlfriend's Day) is almost here, and I have a little question for you...</h1>
+    <h2 class="fade-in delay-1">Will you be expecting a gift from me to celebrate you? 🥺💕</h2>
+    
+    <div class="buttons fade-in delay-2">
+      <button id="yesBtn">Yes, of course! 🥰</button>
+      <button id="noBtn">No, not really 🙈</button>
+    </div>
+  </div>
+
+  <!-- Success Message Container -->
+  <div class="container hidden" id="messageContainer">
+    
+    <div class="polaroid fade-in">
+      <!-- Replace 'our_picture.jpg' in the assets folder -->
+      <img src="assets/vee.jpg" alt="Us ❤️" onerror="this.src='https://placehold.co/400x400/ffe6ea/d81b60?text=Place+Picture+Here';">
+      <div class="polaroid-caption">My beautiful ❤️</div>
+    </div>
+
+    <h1 class="heart-pop">I knew you'd say yes! ❤️</h1>
+    <p class="message-text fade-in delay-1">Arewa, I may not have your gift ready just yet, but I promise I'll get you something special because you deserve to be celebrated on your special day. Eni bi okan mi, thank you for being such an amazing girlfriend and for bringing so much joy into my life.</p>
+    <p class="message-text fade-in delay-2">As Girlfriend's Day approaches, I just want to wish you in advance a beautiful and joyful new month. May this month bring you peace, endless happiness, open doors, good health, and countless reasons to smile. I'll always be grateful to have you in my life. I love you so much, Asanwa. Happy National Girlfriend's Day in advance, my beautiful. ❤️🌹</p>
+    
+    <p class="message-text fade-in delay-3" style="margin-top: 30px; font-family: 'Dancing Script', cursive; font-size: 1.8rem; text-align: right; color: #d81b60;">Forever yours,<br>Ayomiposi BALOGUN</p>
+
+    <!-- Days Together Counter -->
+    <div class="counter fade-in delay-3">
+      Loving you for <span id="daysCount" style="font-weight: 600;">...</span> beautiful days, and forever to go.
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <script>
+    // ==========================================================
+    // TO CHANGE THE ANNIVERSARY DATE, EDIT THE DATE BELOW
+    // Use the format: YYYY-MM-DD
+    // ==========================================================
+    const anniversaryDateString = '2023-01-01'; 
+    // ==========================================================
+
+    function calculateDays() {
+      const anniversaryDate = new Date(anniversaryDateString);
+      const today = new Date();
+      const timeDiff = Math.abs(today.getTime() - anniversaryDate.getTime());
+      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      document.getElementById('daysCount').innerText = daysDiff;
+    }
+    calculateDays();
+
+    // Floating Hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️'; /* We can leave these as emojis since they just float */
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+      const size = Math.random() * 10 + 15;
+      heart.style.fontSize = size + 'px';
+      document.getElementById('floatingHearts').appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 400);
+
+    // Elements
+    const envelopeContainer = document.getElementById('envelopeContainer');
+    const mainContainer = document.getElementById('mainContainer');
+    const messageContainer = document.getElementById('messageContainer');
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const musicToggle = document.getElementById('musicToggle');
+    const bgMusic = document.getElementById('bgMusic');
+
+    // Envelope Click Logic
+    envelopeContainer.addEventListener('click', () => {
+      envelopeContainer.style.opacity = '0';
+      
+      // Start music when envelope is clicked! (browsers prefer interaction)
+      if (bgMusic.paused) {
+        bgMusic.play().then(() => {
+          isPlaying = true;
+          musicToggle.innerHTML = '<span><ion-icon name="pause"></ion-icon></span> Pause Song';
+        }).catch(e => console.log("Audio play deferred"));
+      }
+
+      setTimeout(() => {
+        envelopeContainer.classList.add('hidden');
+        mainContainer.classList.remove('hidden');
+      }, 500); // Wait for fade out
+    });
+
+    // Runaway "No" Button
+    function moveNoButton() {
+      const padding = 20;
+      const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+      const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+      const x = Math.max(padding, Math.random() * maxX);
+      const y = Math.max(padding, Math.random() * maxY);
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+    noBtn.addEventListener('mouseover', moveNoButton);
+    noBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      moveNoButton();
+    });
+
+    // "Yes" Button Logic
+    yesBtn.addEventListener('click', () => {
+      mainContainer.classList.add('hidden');
+      messageContainer.classList.remove('hidden');
+      
+      if (bgMusic.paused) {
+        bgMusic.play().catch(e => console.log("Audio play blocked"));
+        isPlaying = true;
+        musicToggle.innerHTML = '<span><ion-icon name="pause"></ion-icon></span> Pause Song';
+      }
+
+      var duration = 4 * 1000;
+      var end = Date.now() + duration;
+
+      (function frame() {
+        confetti({ particleCount: 6, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ff4081', '#ffffff', '#ffc1cc', '#d81b60'] });
+        confetti({ particleCount: 6, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#ff4081', '#ffffff', '#ffc1cc', '#d81b60'] });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      }());
+    });
+
+    // Background Music Logic
+    let isPlaying = false;
+    musicToggle.addEventListener('click', () => {
+      if (isPlaying) {
+        bgMusic.pause();
+        musicToggle.innerHTML = '<span><ion-icon name="musical-notes"></ion-icon></span> Play Song';
+      } else {
+        bgMusic.play().catch(e => console.log("Audio play blocked"));
+        musicToggle.innerHTML = '<span><ion-icon name="pause"></ion-icon></span> Pause Song';
+      }
+      isPlaying = !isPlaying;
+    });
+
+  </script>
+</body>
+</html>

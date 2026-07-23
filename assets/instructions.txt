@@ -1,0 +1,9 @@
+How to customize your webpage:
+
+1. **Add your picture:**
+   Rename your favorite picture of her (or both of you) to `our_picture.jpg` and place it in this `assets` folder.
+
+2. **Add your song (optional):**
+   Rename your favorite song file to `our_song.mp3` and place it in this `assets` folder. The webpage will automatically play it! (If you don't add it, it will just play the default soft romantic song).
+
+Enjoy! ❤️
